@@ -17,6 +17,20 @@ class Validator
         }
     }
 
+    public function validateMaxLength(int $length, string $field): void
+    {
+        if (strlen($this->array[$field]) > $length) {
+            $this->errors[$field][] = 'You must input less than ' . $length . ' characters.';
+        }
+    }
+
+    public function validateString(string $field): void
+    {
+        if (strlen($this->array[$field]) > $length) {
+            $this->errors[$field][] = 'You must input less than ' . $length . ' characters.';
+        }
+    }
+
     public function validateEmail(string $field): void
     {
         if (!filter_var($this->array[$field], FILTER_VALIDATE_EMAIL)) {
