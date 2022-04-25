@@ -14,12 +14,12 @@ var_dump($post);
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register</title>
     <style>
-        .form_validate_error {
-            display: inline-block;
-            color: rgb(219, 6, 6);
-            padding-left: 1em;
-            max-width: 350px;
-        }
+    .form_validate_error {
+        display: inline-block;
+        color: rgb(219, 6, 6);
+        padding-left: 1em;
+        max-width: 350px;
+    }
     </style>
 </head>
 
@@ -49,7 +49,7 @@ var_dump($post);
             <span class="form_validate_error"><?= esc($errors['city'][0] ?? '') ?></span>
         </p>
         <p><label for="postal_code">Postal Code</label><br />
-            <input type="text" name="postal_code" value="<?= esc_attr($post['postal_code '] ?? '') ?>" />
+            <input type="text" name="postal_code" value="<?= esc_attr($post['postal_code'] ?? '') ?>" />
             <span class="form_validate_error"><?= esc($errors['postal_code'][0] ?? '') ?></span>
         </p>
         <p><input type="submit" name="register"></p>
