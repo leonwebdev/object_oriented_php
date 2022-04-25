@@ -26,8 +26,8 @@ class Validator
 
     public function validateString(string $field): void
     {
-        if (strlen($this->array[$field]) > $length) {
-            $this->errors[$field][] = 'You must input less than ' . $length . ' characters.';
+        if (!preg_match('/^[A-z0-9\s\-\,\']{1,255}$/', $this->array[$field])) {
+            $this->errors[$field][] = 'There are invalid characters.';
         }
     }
 
