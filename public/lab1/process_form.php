@@ -16,6 +16,7 @@ $v->validateMaxLength(255, 'last_name');
 $v->validateString('first_name');
 $v->validateString('last_name');
 $v->validateEmail('email_address');
+$v->validatePhone('phone_number');
 
 if (!empty($v->errors())) {
 
