@@ -49,7 +49,7 @@ var_dump($post);
             <span class="form_validate_error"><?= esc($errors['city'][0] ?? '') ?></span>
         </p>
         <p><label for="postal_code">Postal Code</label><br />
-            <input type="text" name="postal_code" value="<?= esc_attr($post['postal_code'] ?? '') ?>" />
+            <input type="text" name="postal_code" value="<?= esc_attr($post['postal_code '] ?? '') ?>" />
             <span class="form_validate_error"><?= esc($errors['postal_code'][0] ?? '') ?></span>
         </p>
         <p><input type="submit" name="register"></p>

@@ -10,6 +10,7 @@ $v = new Validator($_POST);
 
 $v->validateRequired();
 $v->validateEmail('email_address');
+$v->validateMinLength(3, 'first_name');
 
 if (!empty($v->errors())) {
 

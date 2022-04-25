@@ -10,6 +10,13 @@ class Validator
         $this->array = $array;
     }
 
+    public function validateMinLength(int $length, string $field): void
+    {
+        if (strlen($this->array[$field]) < $length) {
+            $this->errors[$field][] = 'You must input more than ' . $length . ' characters.';
+        }
+    }
+
     public function validateEmail(string $field): void
     {
         if (!filter_var($this->array[$field], FILTER_VALIDATE_EMAIL)) {
