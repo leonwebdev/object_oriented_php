@@ -8,6 +8,7 @@ require __DIR__ . '/Validator.php';
 
 $v = new Validator($_POST);
 
+$v->validateRequired();
 $v->validateEmail('email_address');
 
 if (!empty($v->errors())) {
