@@ -3,8 +3,8 @@
 require __DIR__ . '/config.php';
 require __DIR__ . '/escape.php';
 
-var_dump($errors);
-var_dump($post);
+// var_dump($errors);
+// var_dump($post);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,12 +14,12 @@ var_dump($post);
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register</title>
     <style>
-        .form_validate_error {
-            display: inline-block;
-            color: rgb(219, 6, 6);
-            padding-left: 1em;
-            max-width: 350px;
-        }
+    .form_validate_error {
+        display: inline-block;
+        color: rgb(219, 6, 6);
+        padding-left: 1em;
+        max-width: 350px;
+    }
     </style>
 </head>
 
