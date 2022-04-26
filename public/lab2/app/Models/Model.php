@@ -4,6 +4,8 @@ abstract class Model
 {
     protected static $dbh;
     protected $table;
+    protected $key = 'id';
+
 
     public static function init($dbh)
     {
@@ -24,5 +26,19 @@ abstract class Model
         $stmt->execute();
 
         return $stmt->fetchAll();
+    }
+
+    public function getOne($id)
+    {
+        $query = "SELECT * FROM {$this->table}
+                  WHERE {$this->key} = :id";
+
+        $stmt = self::$dbh->prepare($query);
+
+        $stmt->bindValue(':id', $id);
+
+        $stmt->execute();
+
+        return $stmt->fetch();
     }
 }
