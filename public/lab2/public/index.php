@@ -20,7 +20,7 @@ echo '<p>-----------------------------------------------------------------------
 echo 'getAll() show toooooo much thing, I comment it out, please check in source code.';
 echo '<p>--------------------------------------------------------------------------------</p>';
 // var_dump($user->getAll());
-var_dump($user->getOne(3));
+// var_dump($user->getOne(3));
 
 $array = [
     'first_name' => 'Lwion',
@@ -36,6 +36,8 @@ $array = [
     'subscribe_to_newsletter' => '1',
 ];
 
-$last_insert_id = $user->create($array);
-var_dump($last_insert_id);
-var_dump($user->getOne($last_insert_id));
+// $last_insert_id = $user->create($array);
+// var_dump($last_insert_id);
+// var_dump($user->getOne($last_insert_id));
+
+$user->delete(25);

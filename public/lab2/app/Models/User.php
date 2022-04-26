@@ -14,7 +14,7 @@ class User extends Model
         // Hash password -------------------------
         $hash = password_hash($array['password'], PASSWORD_DEFAULT);
 
-        $query = "INSERT INTO users
+        $query = "INSERT INTO {$this->table}
                   (
                       first_name, 
                       last_name,
@@ -63,5 +63,20 @@ class User extends Model
         $id = self::$dbh->lastInsertId();
 
         return $id;
+    }
+
+    public function delete(int $id)
+    {
+        $query = "UPDATE {$this->table}
+                    SET
+                    deleted = 1
+                    WHERE
+                    id = :id";
+
+        $stmt = self::$dbh->prepare($query);
+
+        $stmt->bindValue(':id', $id);
+
+        $stmt->execute();
     }
 }
