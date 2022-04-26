@@ -25,9 +25,8 @@ class Validator
      *
      * @param   array  $array  [$array the $_POST user input]
      *
-     * @return  void           [return void]
      */
-    public function __construct(array $array): void
+    public function __construct(array $array)
     {
         $this->array = $array;
     }
@@ -135,6 +134,9 @@ class Validator
             }
         }
     }
+
+    /* ----------- MAGIC METHOD
+      -------------------------------------------------------- */
 
     /**
      * [errors will return all errors]
