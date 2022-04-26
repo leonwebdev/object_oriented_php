@@ -3,9 +3,6 @@
 require __DIR__ . '/config.php';
 require __DIR__ . '/Validator.php';
 
-/* YOUR CODE HERE
--------------------------------------------- */
-
 $v = new Validator($_POST);
 
 $v->validateRequired();
