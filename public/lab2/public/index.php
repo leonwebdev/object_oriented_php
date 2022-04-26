@@ -15,5 +15,27 @@ Model::init($dbh);
 $user = new User();
 
 var_dump($user);
-var_dump($user->getAll());
+
+echo '<p>--------------------------------------------------------------------------------</p>';
+echo 'getAll() show toooooo much thing, I comment it out, please check in source code.';
+echo '<p>--------------------------------------------------------------------------------</p>';
+// var_dump($user->getAll());
 var_dump($user->getOne(3));
+
+$array = [
+    'first_name' => 'Lwion',
+    'last_name' => 'Dascrt',
+    'street' => '87 Dreij Street',
+    'city' => 'Qudjr',
+    'postal_code' => 'A9C0X7',
+    'province' => 'Doxcjed',
+    'country' => 'Janose',
+    'phone' => '123-965-4589',
+    'email' => uniqid() . '@exf.sd',
+    'password' => 'ASDFasdf123!',
+    'subscribe_to_newsletter' => '1',
+];
+
+$last_insert_id = $user->create($array);
+var_dump($last_insert_id);
+var_dump($user->getOne($last_insert_id));
