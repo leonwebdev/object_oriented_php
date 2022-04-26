@@ -135,6 +135,9 @@ class Validator
         }
     }
 
+    /* ----------- MAGIC METHOD
+      -------------------------------------------------------- */
+
     /**
      * [errors will return all errors]
      *
