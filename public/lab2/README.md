@@ -1,5 +1,10 @@
-# Object Oriented PHP - Lab #1
+# Object Oriented PHP - Lab #2
 
-* Your name
-* Your email address
+- Lihang Yao
+- <yao-l@webmail.uwinnipeg.ca>
 
+---
+
+- @UPDATE 2022-4-26
+
+---

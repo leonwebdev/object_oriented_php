@@ -1,14 +1,29 @@
 <?php
 
+/**
+ * [User -extend from Model]
+ */
 class User extends Model
 {
     protected $table = 'users';
 
+    /**
+     * [getDbh return the current PDO]
+     *
+     * @return  [PDO]  [return the current PDO]
+     */
     public function getDbh()
     {
         return self::$dbh;
     }
 
+    /**
+     * [create a new user record]
+     *
+     * @param   array  $array  input user info to insert into database
+     *
+     * @return  int            [return last insert id]
+     */
     public function create(array $array): int
     {
         // Hash password -------------------------
@@ -65,7 +80,15 @@ class User extends Model
         return $id;
     }
 
-    public function update(array $array, int $id)
+    /**
+     * [update a user's info by user id]
+     *
+     * @param   array  $array  info will be updated
+     * @param   int    $id     user id
+     *
+     * @return  array          [return last updated user info]
+     */
+    public function update(array $array, int $id): array
     {
         // Hash password -------------------------
         $hash = password_hash($array['password'], PASSWORD_DEFAULT);
@@ -110,7 +133,20 @@ class User extends Model
         return $result;
     }
 
-    public function delete(int $id)
+    /**
+     * [delete a user record by user id]
+     *
+     * @param   int     $id  user id
+     *
+     * @return  string    return a string relating to result:
+     * 
+     * if delete success : Record No. id has been deleted.
+     * 
+     * if delete fail : Record No. id still exists.
+     * 
+     * if user id not found : Record No. id Not Found.
+     */
+    public function delete(int $id): string
     {
         $query = "UPDATE {$this->table}
                     SET
@@ -135,7 +171,20 @@ class User extends Model
         return $message;
     }
 
-    public function isDelete($id)
+    /**
+     * Check if a user record is deleted
+     *
+     * @param   int     $id  user id
+     *
+     * @return  string    return a string relating to result:
+     * 
+     * if delete success : Deleted
+     * 
+     * if delete fail : Existed.
+     * 
+     * if user id not found : No Record Found.
+     */
+    public function isDelete($id): string
     {
         $query = "SELECT deleted FROM {$this->table}
                   WHERE {$this->key} = :id";
