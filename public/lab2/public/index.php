@@ -20,7 +20,7 @@ echo '<p>-----------------------------------------------------------------------
 echo 'getAll() show toooooo much thing, I comment it out, please check in source code.';
 echo '<p>--------------------------------------------------------------------------------</p>';
 // var_dump($user->getAll());
-// var_dump($user->getOne(3));
+var_dump($user->getOne(17));
 
 $array = [
     'first_name' => 'Lwion',

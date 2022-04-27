@@ -19,7 +19,10 @@ abstract class Model
 
     public function getAll()
     {
-        $query = "SELECT * FROM {$this->table}";
+        $query = "  SELECT * 
+                    FROM {$this->table}
+                    WHERE deleted = 0
+                    ";
 
         $stmt = self::$dbh->prepare($query);
 
@@ -30,8 +33,10 @@ abstract class Model
 
     public function getOne($id)
     {
-        $query = "SELECT * FROM {$this->table}
-                  WHERE {$this->key} = :id";
+        $query = "  SELECT * 
+                    FROM {$this->table}
+                    WHERE {$this->key} = :id
+                    AND deleted =0";
 
         $stmt = self::$dbh->prepare($query);
 
