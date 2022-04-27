@@ -65,6 +65,51 @@ class User extends Model
         return $id;
     }
 
+    public function update(array $array, int $id)
+    {
+        // Hash password -------------------------
+        $hash = password_hash($array['password'], PASSWORD_DEFAULT);
+
+        $query = "UPDATE {$this->table}
+                    SET
+                      first_name = :first_name, 
+                      last_name = :last_name,
+                      street = :street,
+                      city = :city,
+                      postal_code = :postal_code,
+                      province = :province,
+                      country = :country,
+                      phone = :phone,
+                      email = :email,
+                      password = :password,
+                      subscribe_to_newsletter = :subscribe_to_newsletter
+                    WHERE
+                      id = :id
+                      ";
+
+        $stmt = self::$dbh->prepare($query);
+
+        $stmt->bindValue(':first_name', $array['first_name']);
+        $stmt->bindValue(':last_name', $array['last_name']);
+        $stmt->bindValue(':street', $array['street']);
+        $stmt->bindValue(':city', $array['city']);
+        $stmt->bindValue(':postal_code', $array['postal_code']);
+        $stmt->bindValue(':province', $array['province']);
+        $stmt->bindValue(':country', $array['country']);
+        $stmt->bindValue(':phone', $array['phone']);
+        $stmt->bindValue(':email', $array['email']);
+        $stmt->bindValue(':password', $hash);
+        $array['subscribe_to_newsletter'] = $array['subscribe_to_newsletter'] ?? 0;
+        $stmt->bindValue(':subscribe_to_newsletter', $array['subscribe_to_newsletter']);
+        $stmt->bindValue(':id', $id);
+
+        $stmt->execute();
+
+        $result = $this->getOne($id);
+
+        return $result;
+    }
+
     public function delete(int $id)
     {
         $query = "UPDATE {$this->table}

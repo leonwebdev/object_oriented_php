@@ -40,9 +40,10 @@ $array = [
 // var_dump($last_insert_id);
 // var_dump($user->getOne($last_insert_id));
 
-var_dump($user->delete(25));
-var_dump($user->delete(2022));
-var_dump($user->delete(11));
-var_dump($user->isDelete(11));
-var_dump($user->isDelete(12));
-var_dump($user->isDelete(5222));
+// var_dump($user->delete(25));
+// var_dump($user->delete(2022));
+// var_dump($user->delete(11));
+// var_dump($user->isDelete(11));
+// var_dump($user->isDelete(12));
+// var_dump($user->isDelete(5222));
+var_dump($user->update($array, 16));
