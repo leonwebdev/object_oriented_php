@@ -78,5 +78,37 @@ class User extends Model
         $stmt->bindValue(':id', $id);
 
         $stmt->execute();
+
+        $check = $this->isDelete($id);
+
+        $message = ($check === 'Deleted') ? 'Record No.' . $id . ' has been deleted.'
+            : (
+                ($check === 'Existed') ? 'Record No.' . $id . ' still exists.'
+                : 'Record No.' . $id . ' Not Found.'
+            );
+
+        return $message;
+    }
+
+    public function isDelete($id)
+    {
+        $query = "SELECT deleted FROM {$this->table}
+                  WHERE {$this->key} = :id";
+
+        $stmt = self::$dbh->prepare($query);
+
+        $stmt->bindValue(':id', $id);
+
+        $stmt->execute();
+
+        $result = $stmt->fetch();
+
+        $message = ($result === false) ? 'No Record Found'
+            : (
+                ($result['deleted'] === 1) ? 'Deleted'
+                : 'Existed'
+            );
+
+        return $message;
     }
 }
