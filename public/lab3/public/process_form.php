@@ -28,4 +28,6 @@ if (!empty($v->errors())) {
     $_SESSION['post'] = $v->array();
     header('Location: index.php');
     die;
+} else {
+    echo '<h1>Form No Errors!</h1>';
 }
