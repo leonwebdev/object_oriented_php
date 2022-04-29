@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Lib;
+
 /**
  * [Validator description]
  */
@@ -20,7 +22,7 @@ class Validator
     private $errors;
 
     /**
-     * 
+     *
      * [Construction Function, import $_POST as an array]
      *
      * @param   array  $array  [$array the $_POST user input]

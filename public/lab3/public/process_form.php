@@ -1,7 +1,10 @@
 <?php
 
 require __DIR__ . '/config.php';
-require __DIR__ . '/Validator.php';
+// require __DIR__ . '/Validator.php';
+require __DIR__ . '/../vendor/autoload.php';
+
+use App\Lib\Validator;
 
 $v = new Validator($_POST);
 
@@ -23,6 +26,6 @@ if (!empty($v->errors())) {
 
     $_SESSION['errors'] = $v->errors();
     $_SESSION['post'] = $v->array();
-    header('Location: form.php');
+    header('Location: index.php');
     die;
 }

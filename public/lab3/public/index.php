@@ -2,6 +2,8 @@
 
 require __DIR__ . '/config.php';
 require __DIR__ . '/escape.php';
+require __DIR__ . '/../vendor/autoload.php';
+
 
 // var_dump($errors);
 // var_dump($post);
