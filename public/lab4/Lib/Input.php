@@ -1,0 +1,3 @@
+<?php
+
+// NO NAMESPACE, PLEASE
