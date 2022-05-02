@@ -27,9 +27,9 @@ $_COOKIE = array(
 );
 
 $_REQUEST = array(
-    'first_name' => 'Beanie',
-    'last_name' => 'McDoodle',
-    'email' => 'beanie@yahoo.com'
+  'first_name' => 'Beanie',
+  'last_name' => 'McDoodle',
+  'email' => 'beanie@yahoo.com'
 );
 
 require __DIR__ . '/../Lib/Input.php';
@@ -47,56 +47,56 @@ require __DIR__ . '/../Lib/Input.php';
 
 <h2>$_REQUEST fields</h1>
 
-<pre>
-<?php var_dump( Input::request('first_name') ); ?>
-<?php var_dump( Input::request('city') ); ?>
+  <pre>
+<?php var_dump(Input::request('first_name')); ?>
+<?php var_dump(Input::request('city')); ?>
 </pre>
 
-<hr />
+  <hr />
 
-<h2>$_POST full</h2>
+  <h2>$_POST full</h2>
 
-<pre>
+  <pre>
   <?php var_dump(Input::post()); ?>
 </pre>
 
-<h2>$_POST fields</h1>
+  <h2>$_POST fields</h1>
 
-<pre>
-<?php var_dump( Input::post('first_name') ); ?>
-<?php var_dump( Input::post('city') ); ?>
+    <pre>
+<?php var_dump(Input::post('first_name')); ?>
+<?php var_dump(Input::post('city')); ?>
 </pre>
 
-<hr />
+    <hr />
 
-<h2>$_GET full</h2>
+    <h2>$_GET full</h2>
 
-<pre>
+    <pre>
   <?php var_dump(Input::get()); ?>
 </pre>
 
-<h2>$_GET fields</h1>
+    <h2>$_GET fields</h1>
 
-<pre>
-<?php var_dump( Input::get('first_name') ); ?>
-<?php var_dump( Input::get('city') ); ?>
+      <pre>
+<?php var_dump(Input::get('first_name')); ?>
+<?php var_dump(Input::get('city')); ?>
 </pre>
 
-<hr />
+      <hr />
 
-<h2>$_COOKIE full</h2>
+      <h2>$_COOKIE full</h2>
 
-<pre>
+      <pre>
   <?php var_dump(Input::cookie()); ?>
 </pre>
 
-<h2>$_COOKIE fields</h1>
+      <h2>$_COOKIE fields</h1>
 
-<pre>
-<?php var_dump( Input::cookie('first_name') ); ?>
-<?php var_dump( Input::cookie('city') ); ?>
+        <pre>
+<?php var_dump(Input::cookie('first_name')); ?>
+<?php var_dump(Input::cookie('city')); ?>
 </pre>
 
-<hr />
+        <hr />
 
-<h1>END</h1>
+        <h1>END</h1>
